@@ -1,32 +1,57 @@
 /* Content Wrap
 ###########################################################################  */
 
-.content-wrap{
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--light);
+body {
+    display: flex;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.content-wrap {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (orientation: landscape) {
+    .body {
+        flex-direction: row;
+    }
+}
+
+@media (orientation: portrait) {
+    .body {
+        flex-direction: column;
+    }
 }
 
 .content-wrap:nth-child(even) {
-  background-color: var(--lighter);
+    background-color: var(--lighter);
 }
 
 
 /* Card
 ###########################################################################  */
 
-.card{
-  width: 50%;
-  background-color: var(--lightest);
-  border-radius: var(--radius-m);
-  overflow: hidden;
-  box-shadow: var(--n-shadow-l);
+.card {
+    width: clamp(250px, 50%, 600px);
+    font-size: clamp(14px, 2.5vw, 0.7rem);
+    background-color: var(--lightest);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    box-shadow: var(--n-shadow-l);
+    position: sticky;
+    top: 0;
 }
 
-.card figcaption{
-  padding: var(--l) var(--m) var(--xl) var(--m);
+.header {
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.card figcaption {
+    padding: var(--l) var(--m) var(--xl) var(--m);
 }
