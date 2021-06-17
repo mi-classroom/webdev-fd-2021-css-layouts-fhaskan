@@ -1,6 +1,10 @@
 /* Content Wrap
 ###########################################################################  */
 
+body {
+    display: flex;
+}
+
 .content-wrap {
     width: 100vw;
     min-height: 100vh;
@@ -8,6 +12,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (orientation: landscape) {
+    .body {
+        flex-direction: row;
+    }
+}
+
+@media (orientation: portrait) {
+    .body {
+        flex-direction: column;
+    }
 }
 
 .content-wrap:nth-child(even) {
@@ -31,8 +47,8 @@
 
 .header {
     position: absolute;
-    top: 5%;
-    left: 35%;
+    top: 15%;
+    left: 40%;
     transform: translate(-50%, -50%);
 }
 
